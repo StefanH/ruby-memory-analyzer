@@ -1,11 +1,18 @@
 # Analyzing a rails project
 
 * Start process
+* Do couple of requests, try to trigger memory leak, keep an eye on process memory
+* Get a heap dump
+* Analyze generations using analyzer
+
+Or:
+
+* Start process
 * Do couple of requests (for getting normal heap)
 * Get a heap dump
 * Do a bunch more requests
 * Get a heap dump
-* Analyze differences
+* Analyze differences using differ
 
 ## Getting a heap dump
 
@@ -34,10 +41,10 @@ in routes
 
     get 'test/dump_heap', to: 'test#dump_heap'
 
-## Analyzing with this thing
+## Analyzing heap dump(s)
 
 * Differ shows differences (leaked objects) between 2 heap dumps
-* Analyze allows you to look at a heap dump in detail. Look for objects that are not in the first couple of generations, but also not in the last. Example generation_count_report: 
+* Analyze allows you to look at a heap dump in more detail. Look for objects that are not in the first couple of generations, but also not in the last. Example generation_count_report: 
 
 ````
 1 233
