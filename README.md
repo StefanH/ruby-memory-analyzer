@@ -39,6 +39,7 @@ in routes
 * Differ shows differences (leaked objects) between 2 heap dumps
 * Analyze allows you to look at a heap dump in detail. Look for objects that are not in the first couple of generations, but also not in the last. Example generation_count_report: 
 
+````
 1 233
 2 3223
 3 33
@@ -47,6 +48,7 @@ in routes
 6 1
 7 1
 9 233
+````
 
 In this case the objects in 4,5,6,7 might be leaked
 
